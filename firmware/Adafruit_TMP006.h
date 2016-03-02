@@ -30,7 +30,7 @@
   #include "TinyWireM.h"
   #define Wire TinyWireM
 #else
-  #include "Application.h"
+  #include "application.h"
 #endif
 
 // uncomment for debugging!
