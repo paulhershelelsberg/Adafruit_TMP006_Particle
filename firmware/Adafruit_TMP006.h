@@ -24,7 +24,7 @@
 #define TMP006_S0 6.4  // * 10^-14
 
 
-#include "Adafruit_Sensor/Adafruit_Sensor.h"
+
 
 #ifdef __AVR_ATtiny85__
   #include "TinyWireM.h"
