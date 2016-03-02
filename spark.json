@@ -1,0 +1,7 @@
+{
+    "name": "Adafruit_TMP006",
+    "version": "0.0.1",
+    "author": "Adafruit <email@somesite.com>",
+    "license": "MIT",
+    "description": "Temperature Sensor"
+}
