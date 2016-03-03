@@ -23,7 +23,13 @@
 #define TMP006_A1 0.00175
 #define TMP006_S0 6.4  // * 10^-14
 
-
+#include "Adafruit_Sensor.h"
+#if defined (SPARK)
+ #define WIRE Wire
+ #include <math.h>
+#else
+#include <Wire.h>
+#endif //Spark
 
 
 #ifdef __AVR_ATtiny85__
