@@ -149,26 +149,26 @@ int16_t Adafruit_TMP006::readRawVoltage(void) {
 uint16_t Adafruit_TMP006::read16(uint8_t a) {
   uint16_t ret;
 
-  Wire.beginTransmission(_addr); // start transmission to device 
+  WIRE.beginTransmission(_addr); // start transmission to device 
 #if (ARDUINO >= 100)
-  Wire.write(a); // sends register address to read from
+  WIRE.write(a); // sends register address to read from
 #else
-  Wire.send(a); // sends register address to read from
+  WIRE.send(a); // sends register address to read from
 #endif
-  Wire.endTransmission(); // end transmission
+  WIRE.endTransmission(); // end transmission
   
-  Wire.beginTransmission(_addr); // start transmission to device 
-  Wire.requestFrom(_addr, (uint8_t)2);// send data n-bytes read
+  WIRE.beginTransmission(_addr); // start transmission to device 
+  WIRE.requestFrom(_addr, (uint8_t)2);// send data n-bytes read
 #if (ARDUINO >= 100)
-  ret = Wire.read(); // receive DATA
+  ret = WIRE.read(); // receive DATA
   ret <<= 8;
-  ret |= Wire.read(); // receive DATA
+  ret |=  WIRE.read(); // receive DATA
 #else
-  ret = Wire.receive(); // receive DATA
+  ret = WIRE.receive(); // receive DATA
   ret <<= 8;
-  ret |= Wire.receive(); // receive DATA
+  ret |=  WIRE.receive(); // receive DATA
 #endif
-  Wire.endTransmission(); // end transmission
+  WIRE.endTransmission(); // end transmission
 
   return ret;
 }
@@ -176,14 +176,14 @@ uint16_t Adafruit_TMP006::read16(uint8_t a) {
 void Adafruit_TMP006::write16(uint8_t a, uint16_t d) {
   Wire.beginTransmission(_addr); // start transmission to device 
 #if (ARDUINO >= 100)
-  Wire.write(a); // sends register address to read from
-  Wire.write(d>>8);  // write data
-  Wire.write(d);  // write data
+  WIRE.write(a); // sends register address to read from
+  WIRE.write(d>>8);  // write data
+  WIRE.write(d);  // write data
 #else
-  Wire.send(a); // sends register address to read from
-  Wire.send(d>>8);  // write data
-  Wire.send(d);  // write data
+  WIRE.send(a); // sends register address to read from
+  WIRE.send(d>>8);  // write data
+  WIRE.send(d);  // write data
 #endif
-  Wire.endTransmission(); // end transmission
+  WIRE.endTransmission(); // end transmission
 }
 
