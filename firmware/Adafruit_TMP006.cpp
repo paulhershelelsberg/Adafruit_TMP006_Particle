@@ -15,7 +15,8 @@
  ****************************************************/
 
 #include "Adafruit_TMP006.h"
-
+#include "application.h"
+#include "math.h"
 
 //#define TESTDIE 0x0C78
 //#define TESTVOLT 0xFEED
